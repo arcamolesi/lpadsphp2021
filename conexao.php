@@ -14,10 +14,8 @@
 
         public static function conectar(){
             if (self::$cont == null){
-                try {                 
-                self::$cont = new PDO("mysql:host=" . self::$dbHost . 
-                                      ";dbname = " . self::$dbNome , 
-                                      self::$dbUsuario, self::$dbSenha); 
+                try {       
+                self::$cont = new PDO('mysql:host=localhost;dbname=rodeio', self::$dbUsuario, self::$dbSenha); 
                 }
                 catch(PDOException $exception){
                      die ($exception->getmessage()); 
