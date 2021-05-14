@@ -1,6 +1,7 @@
 <?php //listarCompetidor.php
     include 'conexao.php'; 
      $pdo = Conexao::conectar(); 
+     $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
      $sql = "Select * from competidor"; 
      $listaCompetidores = $pdo->query($sql); 
 ?> 
@@ -41,6 +42,7 @@
                 <th>ESTADO</th>
                 <th>IDADE</th>
                 <th>SOMA NOTA</th>
+                <th colspan="2">Função</th>
             </tr>
             <?php 
                 foreach ($listaCompetidores as $competidor){
@@ -52,6 +54,12 @@
                     <td><?php echo $competidor['estado'];?></td>
                     <td><?php echo $competidor['idade'];?></td>
                     <td><?php echo $competidor['somanota'];?></td>
+                    <td> <a class="btn-floating btn-small waves-effect waves-light orange"
+                          onclick="JavaScript:location.href='frmEdtCompetidor.php?id=' +
+                          <?php echo $competidor['id'];?>" >
+                           <i class="material-icons">edit</i>
+                    </td>
+
                 </tr>
             <?php
                 }
