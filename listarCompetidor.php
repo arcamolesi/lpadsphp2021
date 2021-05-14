@@ -19,6 +19,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Lista Competidor</title>
 </head>
@@ -26,9 +27,12 @@
    <div class="container">
    <div class="row">
         <div class="col s12">
-        <h3 class="orange lighten-2 white-text text-dark-3" class="text-orange">Listar Competidores</h3>
-       
-      
+        <h3 class="orange lighten-2 white-text text-dark-3" class="text-orange">
+          Listar Competidores 
+          <a class="btn-floating btn-large waves-effect waves-light green"
+               onclick="JavaScript:location.href='frmInsCompetidor.php'"><i class="material-icons">add</i></a>
+        </h3>
+             
         <table class="striped highlight  blue lighten-3 responsive-table">
             <tr class="light-blue darken-4  grey-text text-lighten-3">    
                 <th>ID</th>
