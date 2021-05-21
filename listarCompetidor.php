@@ -1,4 +1,5 @@
 <?php //listarCompetidor.php
+    include 'menu.php'; 
     include 'conexao.php'; 
      $pdo = Conexao::conectar(); 
      $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -59,7 +60,11 @@
                           <?php echo $competidor['id'];?>" >
                            <i class="material-icons">edit</i>
                     </td>
-
+                    <td> <a class="btn-floating btn-small waves-effect waves-light red"
+                          onclick="JavaScript:location.href='frmRmvCompetidor.php?id=' +
+                          <?php echo $competidor['id'];?>" >
+                           <i class="material-icons">delete</i>
+                    </td>
                 </tr>
             <?php
                 }
