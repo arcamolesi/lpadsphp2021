@@ -26,6 +26,7 @@
     <title>Lista Competidor</title>
 </head>
 <body>
+    
    <div class="container">
    <div class="row">
         <div class="col s12">

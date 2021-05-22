@@ -1,3 +1,9 @@
+<?php 
+  session_start();
+  if (!isset($_SESSION['usuario']))
+      Header("location:index.php"); 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,6 +31,7 @@
         <li><a href="badges.html">Components</a></li>
         <li><a href="logout.php">Logout</a></li>
       </ul>
+      <h7 right>Usuário: <?php echo $_SESSION['usuario'];?><h7>
     </div>
   </nav>
 
