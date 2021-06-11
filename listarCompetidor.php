@@ -1,9 +1,17 @@
 <?php //listarCompetidor.php
     include 'menu.php'; 
+
+    if (isset($_GET['busca']))
+       $busca = $_GET['busca'];
+       else $busca = ''; 
+
     include 'conexao.php'; 
      $pdo = Conexao::conectar(); 
      $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     $sql = "Select * from competidor"; 
+    
+     if ($busca!='')
+           $sql = "Select * from competidor WHERE nome like '%" . $busca .  "%' order by nome"; 
+       else $sql = "Select * from competidor order by nome"; 
      $listaCompetidores = $pdo->query($sql); 
 ?> 
 
@@ -35,6 +43,20 @@
           <a class="btn-floating btn-large waves-effect waves-light green"
                onclick="JavaScript:location.href='frmInsCompetidor.php'"><i class="material-icons">add</i></a>
         </h3>
+
+        <div class="row">
+            <div class="input-field">
+                <form action="listarCompetidor.php" method="GET" id="frmBuscaCompet" class="col s12" >
+                    <div class="input-field col s12">
+                        <label for="lblNome" class="red-text text-dark-4">Informe o nome do Competidor: </label>
+                        <input type="text" placeholder="informe o nome do competidor para ser selicionado"
+                               class="form-control col s8" id="txtBusca" name="busca"> 
+                        <button class="btn waves-effect waves-light col m1" type="submit" name="action">
+                        <i class="material-icons right">search</i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
              
         <table class="striped highlight  blue lighten-3 responsive-table">
             <tr class="light-blue darken-4  grey-text text-lighten-3">    
