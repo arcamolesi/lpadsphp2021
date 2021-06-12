@@ -18,5 +18,6 @@
        Conexao::desconectar(); 
    }
    else echo "campo nome ou nota são vazios..."; 
+  
    header("location: listarCompetidor.php")
 ?>

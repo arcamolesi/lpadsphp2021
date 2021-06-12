@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Validando formulários com JQuery Validation</title>
+<!-- Inclusão do jQuery-->
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<!-- Inclusão do Plugin jQuery Validation-->
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+
+ <!-- Bootstrap CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+<body>
+
+<form id="formComentario" method="post" action="">
+  <fieldset>
+    <legend>Por favor preencha o nome, e-mail e comentário</legend>
+    <p>
+      <label for="cnome">Nome (obrigatório, pelo menos 2 caracteres)</label>
+      <input type="text" class="form-control" id="cnome" name="nome" required minlength="2">
+     <div class="valid-feedback">
+        Looks good!
+      </div>
+    </p>
+    <p>
+      <label for="cemail">E-mail (obrigatório)</label>
+      <input type="email" id="cemail" name="email" required >
+    </p>
+    <p>
+      <label for="ccomentario">Seu comentário (obrigatório)</label>
+      <textarea id="ccomentario" name="comentario" required ></textarea>
+    </p>
+    <p>
+      <input type="submit" value="Enviar">
+    </p>
+  </fieldset>
+</form>
+<!-- Inclusão das validações com o Plugin jQuery Validation-->
+<script src="validacao.js"></script>
+</body>
+</html>
