@@ -28,7 +28,7 @@
       <a href="#" class="brand-logo right"><img src="imagens/logo3.png" width="60"></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="listarCompetidor.php">Competidor</a></li>
-        <li><a href="badges.html">Components</a></li>
+        <li><a href="frmLancarMontaria.php">Lançar Montaria</a></li>
         <li><a href="logout.php">Logout</a></li>
       </ul>
       <h7 right>Usuário: <?php echo $_SESSION['usuario'];?><h7>
